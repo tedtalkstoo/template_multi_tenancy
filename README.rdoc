@@ -1,10 +1,16 @@
-== Rails template with Devise authentication
+== Rails template with Postgresql schema based multi-tenancy
 
 Standard rails template setup with:
+* Postgresql schema based multi-tenancy following http://blog.jerodsanto.net/2011/07/building-multi-tenant-rails-apps-with-postgresql-schemas/
 * Devise https://github.com/plataformatec/devise
 * Bootstrap 3 http://getbootstrap.com/
 * Better Errors https://github.com/charliesome/better_errors
 * Binding Of Caller https://github.com/banister/binding_of_caller
+
+
+Changes to multi-tenancy set up:
+* You may want to create tables shared across tenants. Edit tenant.rb and add to shared_tables list
+
 
 Changes to Devise:
 * Edited Devise views for bootstrap
@@ -13,11 +19,13 @@ Changes to Devise:
 * On the login page, I have removed the "remember me" checkbox, see above
 * I have changed the "remember me" period to 1 year. Change this in the Devise initializer
 
+
 Things to change:
 * Complete config.action_mailer.default_url_options = { :host => '' } in environments/production.rb
 * Complete config.mailer_sender = '' in Devise initializer
 * Fill out setup_mail.rb in initializers
 * Ensure database.yml is present in the config folder
+
 
 To clone project locally:
   git clone git://github.com/tedtalkstoo/template_devise.git
