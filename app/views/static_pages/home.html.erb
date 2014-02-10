@@ -1,0 +1,14 @@
+  <!-- Main component for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    
+  	<% if !user_signed_in? %>
+    	<h1>Project</h1>
+	<% else %>
+		<h1>Hi <%= current_user.first_name %></h1>
+	<% end %>
+    
+    <p>This is a rails template to help you get off the ground more quickly.</p>
+
+    <p>Created and maintained by @tedtalkstoo (<a href="https://github.com/tedtalkstoo">Github</a> and  <a href="https://twitter.com/tedtalkstoo">Twitter</a>) </p>
+
+  </div>

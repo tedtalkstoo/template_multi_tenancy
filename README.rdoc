@@ -1,0 +1,27 @@
+== Rails template with Devise authentication
+
+Standard rails template setup with:
+* Devise https://github.com/plataformatec/devise
+* Bootstrap 3 http://getbootstrap.com/
+* Better Errors https://github.com/charliesome/better_errors
+* Binding Of Caller https://github.com/banister/binding_of_caller
+
+Changes to Devise:
+* Edited Devise views for bootstrap
+* I have removed user registations, this can be undone (see routes). I have done this because this is the standard setup for my commercial apps
+* The User model has a field "login_type", this is defaulted to "user". But if changed to "remember", then that user will automatically be "remembered". See the Sessions controller for how this works
+* On the login page, I have removed the "remember me" checkbox, see above
+* I have changed the "remember me" period to 1 year. Change this in the Devise initializer
+
+Things to change:
+* Complete config.action_mailer.default_url_options = { :host => '' } in environments/production.rb
+* Complete config.mailer_sender = '' in Devise initializer
+* Fill out setup_mail.rb in initializers
+* Ensure database.yml is present in the config folder
+
+To clone project locally:
+  git clone git://github.com/tedtalkstoo/template_devise.git
+
+Created and maintained by @tedtalkstoo (https://twitter.com/tedtalkstoo)  
+  
+
